@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://unpkg.com/react@16.3.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.3.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <script src="https://unpkg.com/prop-types@15.6.1/prop-types.js"></script>
+</head>
+<body>
+    <div id="root" > </div>
+    <script type="text/babel">
+        const rootElement= document.getElementById('root');
+
+        const SayHi = ({ message }) => {
+            return !message ? <div> No Content </div> : <div>Hello {message} there!!!</div>;
+        }
+        ReactDOM.render(<SayHi message={null}/>, rootElement);
+    </script>
+</body>
+</html>
+
+<script>
+/**
+Notes
+-------
+1. There is situation where we need render component based on the condition the you can simply use
+ternary operator.
+**/
+
+</script>

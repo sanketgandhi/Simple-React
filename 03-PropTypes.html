@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://unpkg.com/react@16.3.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.3.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <script src="https://unpkg.com/prop-types@15.6.1/prop-types.js"></script>
+</head>
+<body>
+    <div id="root" > </div>
+
+    <script type="text/babel">
+        const rootElement = document.getElementById('root');
+        function SayHello(props) {
+            return (
+                <div>Hello {props.firstname} {props.lastname} </div>
+            )
+        }
+
+        SayHello.propTypes = {
+            firstname: PropTypes.string,
+            lastname: PropTypes.string.isRequired
+        }
+
+        /**
+         * We can define static variable  with proptypes
+         */
+        class SayHi extends React.Component {
+            static propTypes = {
+                firstname: PropTypes.string.isRequired,
+                lastname: PropTypes.string
+            }
+            render() {
+                const {firstname, lastname} = this.props;
+                return (
+                    <div>Hello {this.props.firstname} {this.props.lastname} </div>
+                )
+            }
+        }
+
+        ReactDOM.render(<SayHi firstname={'sanket'} />, rootElement);
+    </script>
+</body>
+</html>
+
+<script>
+/**
+Notes
+--------
+    1. If you want to validate whether the typeof props should be the exactly same as you would expect
+        then use proptypes.
+    2. React time developed proptypes to validate the components props
+    3. Just include the package and attach it to the component or if we have component which is created
+        using class then add static variable.
+**/
+</script>

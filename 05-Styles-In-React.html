@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://unpkg.com/react@16.3.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.3.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+<body>
+    <div id="root" > </div>
+    <style>
+        .box {
+            border: 1px solid black;
+        }
+
+        .box--small {
+            width: 60px;
+            height: 60px;
+        }
+        .box--medium {
+            width: 120px;
+            height: 120px;
+        }
+        .box--large {
+            width: 160px;
+            height:120px;
+        }
+    </style>
+    <script type="text/babel">
+        const rootElement = document.getElementById('root');
+
+        function Box({style, size='', ...rest}) {
+            return (
+                <div>
+                    <div
+                        className={`box ${className}`}
+                        style={{ paddingLeft: 20, ...style}}
+                        {...rest}
+                    >
+                    </div>
+                </div>
+            )
+        }
+        const element = (
+            <div>
+                <Box size="small" style={{ backgroundColor: 'lightblue'}}> Small Box </Box>
+                <Box size="medium" style={{ backgroundColor: 'pink'}}> Medium Box </Box>
+                <Box size="large" style={{ backgroundColor: 'orange'}}> Large Box </Box>
+            </div>
+        )
+
+        ReactDOM.render(element, rootElement);
+    </script>
+</body>
+</html>
+
+<script>
+/**
+notes
+--------
+1. To apply style use {{ }}
+2. If you want to merge the styles use rest operator
+**/
+</script>

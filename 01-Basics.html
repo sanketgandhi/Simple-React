@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://unpkg.com/react@16.3.0/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16.3.0/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        let root = document.getElementById('root');
+        let props = {
+            className: 'container',
+            children: 'HEYYY'
+        };
+
+        let element = <div {...props} children="THANOS!!!" />;
+
+        ReactDOM.render(element, root);
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+<script>
+/**
+Notes
+-------
+    0. The content we specified in between the tags is actually called as `children`
+    1. You can create props object and just use spread operator.
+    2. If you want to make props in such way that if user passes props then it should take users props
+       else it should take default one. To achieve you should mention your props before spreading props
+    3. If you want to override props even though users passes it then mention those props after spreading
+**/
+</script>
